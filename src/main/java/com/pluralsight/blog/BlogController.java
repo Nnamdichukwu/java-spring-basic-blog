@@ -11,6 +11,10 @@ import java.util.List;
 @Controller
 public class BlogController {
     private  PostRepository postRepository;
+
+    public  BlogController (PostRepository postRepository){
+        this.postRepository = postRepository ;
+    }
     @RequestMapping("/")
     public  String listPosts(ModelMap modelMap){
         List<Post> allPosts = postRepository.getAllPosts();
